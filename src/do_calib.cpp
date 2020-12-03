@@ -51,7 +51,7 @@ DoCalib::DoCalib() :
   imu_sub_ = nh.subscribe("imu", 1, &DoCalib::imuCallback, this);
 
   ros::NodeHandle nh_private("~");
-  nh_private.param<int>("measurements", measurements_per_orientation_, 500);
+  nh_private.param<int>("measurements", measurements_per_orientation_, 250);
   nh_private.param<double>("reference_acceleration", reference_acceleration_, 9.80665);
   nh_private.param<std::string>("output_file", output_file_, "imu_calib.yaml");
 
